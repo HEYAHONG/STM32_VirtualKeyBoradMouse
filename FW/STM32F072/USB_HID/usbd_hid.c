@@ -675,14 +675,12 @@ __ALIGN_BEGIN static  uint8_t HID_Config_ReportDesc[HID_Config_REPORT_DESC_SIZE]
 		  0x05, 0x01,                    // USAGE_PAGE (Generic Desktop)
 		    0x09, 0x00,                    // USAGE (Undefined)
 		    0xa1, 0x01,                    // COLLECTION (Application)
-		    0x85, 0x01,                    //   REPORT_ID (1)
 		    0x09, 0x00,                    //   USAGE (Undefined)
 		    0x15, 0x00,                    //   LOGICAL_MINIMUM (0)
 		    0x26, 0xff, 0x00,              //   LOGICAL_MAXIMUM (255)
 		    0x75, 0x08,                    //   REPORT_SIZE (8)
 		    0x95, 0x08,                    //   REPORT_COUNT (8)
 		    0x81, 0x82,                    //   INPUT (Data,Var,Abs,Vol)
-		    0x85, 0x02,                    //   REPORT_ID (2)
 		    0x09, 0x00,                    //   USAGE (Undefined)
 		    0x15, 0x00,                    //   LOGICAL_MINIMUM (0)
 		    0x26, 0xff, 0x00,              //   LOGICAL_MAXIMUM (255)
@@ -1096,7 +1094,7 @@ static uint8_t  USBD_HID_DataOut(USBD_HandleTypeDef *pdev,
                                 uint8_t epnum)
 {
  //获取接收的大小
- size_t data_size=USBD_LL_GetRxDataSize(pdev,epnum);
+ size_t data_size=USBD_GetRxCount(pdev,epnum);
  if(epnum==HID_EPOUT1_ADDR)
 {
 
