@@ -51,14 +51,22 @@ extern "C" {
 #define HID_EPOUT1_ADDR				  0x03U
 #define HID_EPOUT1_SIZE				  0x01U
 
+//添加配置接口相关定义
+#define HID_EPIN2_ADDR				  0x84U
+#define HID_EPIN2_SIZE				  64U
 
+#define HID_EPOUT2_ADDR				  0x05U
+#define HID_EPOUT2_SIZE				  64U
 
-#define USB_HID_CONFIG_DESC_SIZ       66U
+#define USB_HID_CONFIG_DESC_SIZ       98U
 #define USB_HID_DESC_SIZ              9U
 #define HID_MOUSE_REPORT_DESC_SIZE    74U
 
 //添加键盘相关定义
 #define HID_KeyBoard_REPORT_DESC_SIZE    63U
+
+//添加配置接口相关定义
+#define HID_Config_REPORT_DESC_SIZE    37U
 
 #define HID_DESCRIPTOR_TYPE           0x21U
 #define HID_REPORT_DESC               0x22U
@@ -136,6 +144,10 @@ uint8_t USBD_HID_SendReport(USBD_HandleTypeDef *pdev,
                             uint16_t len);
 //键盘的报告函数
 uint8_t USBD_HID1_SendReport(USBD_HandleTypeDef *pdev,
+                            uint8_t *report,
+                            uint16_t len);
+//键盘的报告函数
+uint8_t USBD_HID2_SendReport(USBD_HandleTypeDef *pdev,
                             uint8_t *report,
                             uint16_t len);
 
