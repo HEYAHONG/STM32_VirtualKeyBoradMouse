@@ -134,6 +134,9 @@ USBD_ClassTypeDef  USBD_HID =
   USBD_HID_GetDeviceQualifierDesc,
 };
 
+
+//修改FS下的设置
+
 /* USB HID device FS Configuration Descriptor */
 __ALIGN_BEGIN static uint8_t USBD_HID_CfgFSDesc[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
 {
@@ -142,7 +145,7 @@ __ALIGN_BEGIN static uint8_t USBD_HID_CfgFSDesc[USB_HID_CONFIG_DESC_SIZ]  __ALIG
   USB_HID_CONFIG_DESC_SIZ,
   /* wTotalLength: Bytes returned */
   0x00,
-  0x01,         /*bNumInterfaces: 1 interface*/
+  0x02,         /*bNumInterfaces: 1 interface*/
   0x01,         /*bConfigurationValue: Configuration value*/
   0x00,         /*iConfiguration: Index of string descriptor describing
   the configuration*/
@@ -182,6 +185,44 @@ __ALIGN_BEGIN static uint8_t USBD_HID_CfgFSDesc[USB_HID_CONFIG_DESC_SIZ]  __ALIG
   0x00,
   HID_FS_BINTERVAL,          /*bInterval: Polling Interval */
   /* 34 */
+//添加新接口interface
+    0x09,         /*bLength: Interface Descriptor size*/
+    USB_DESC_TYPE_INTERFACE,/*bDescriptorType: Interface descriptor type*/
+    0x01,         /*bInterfaceNumber: Number of Interface*/
+    0x00,         /*bAlternateSetting: Alternate setting*/
+    0x02,         /*bNumEndpoints*/
+    0x03,         /*bInterfaceClass: HID*/
+    0x01,         /*bInterfaceSubClass : 1=BOOT, 0=no boot*/
+    0x01,         /*nInterfaceProtocol : 0=none, 1=keyboard, 2=mouse*/
+    0,            /*iInterface: Index of string descriptor*/
+
+    0x09,         /*bLength: HID Descriptor size*/
+    HID_DESCRIPTOR_TYPE, /*bDescriptorType: HID*/
+    0x11,         /*bcdHID: HID Class Spec release number*/
+    0x01,
+    0x00,         /*bCountryCode: Hardware target country*/
+    0x01,         /*bNumDescriptors: Number of HID class descriptors to follow*/
+    0x22,         /*bDescriptorType*/
+    HID_KeyBoard_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+    0x00,
+
+    0x07,          /*bLength: Endpoint Descriptor size*/
+    USB_DESC_TYPE_ENDPOINT, /*bDescriptorType:*/
+
+    HID_EPIN1_ADDR,     /*bEndpointAddress: Endpoint Address (IN)*/
+    0x03,          /*bmAttributes: Interrupt endpoint*/
+    HID_EPIN1_SIZE, /*wMaxPacketSize: 4 Byte max */
+    0x00,
+    HID_FS_BINTERVAL,          /*bInterval: Polling Interval */
+
+	 0x07,          /*bLength: Endpoint Descriptor size*/
+	 USB_DESC_TYPE_ENDPOINT, /*bDescriptorType:*/
+
+	 HID_EPOUT1_ADDR,     /*bEndpointAddress: Endpoint Address (IN)*/
+	 0x03,          /*bmAttributes: Interrupt endpoint*/
+	 HID_EPOUT1_SIZE, /*wMaxPacketSize: 4 Byte max */
+	 0x00,
+	 HID_FS_BINTERVAL,          /*bInterval: Polling Interval */
 };
 
 /* USB HID device HS Configuration Descriptor */
@@ -192,7 +233,7 @@ __ALIGN_BEGIN static uint8_t USBD_HID_CfgHSDesc[USB_HID_CONFIG_DESC_SIZ]  __ALIG
   USB_HID_CONFIG_DESC_SIZ,
   /* wTotalLength: Bytes returned */
   0x00,
-  0x01,         /*bNumInterfaces: 1 interface*/
+  0x02,         /*bNumInterfaces: 1 interface*/
   0x01,         /*bConfigurationValue: Configuration value*/
   0x00,         /*iConfiguration: Index of string descriptor describing
   the configuration*/
@@ -232,6 +273,45 @@ __ALIGN_BEGIN static uint8_t USBD_HID_CfgHSDesc[USB_HID_CONFIG_DESC_SIZ]  __ALIG
   0x00,
   HID_HS_BINTERVAL,          /*bInterval: Polling Interval */
   /* 34 */
+
+  //添加新接口interface
+      0x09,         /*bLength: Interface Descriptor size*/
+      USB_DESC_TYPE_INTERFACE,/*bDescriptorType: Interface descriptor type*/
+      0x01,         /*bInterfaceNumber: Number of Interface*/
+      0x00,         /*bAlternateSetting: Alternate setting*/
+      0x02,         /*bNumEndpoints*/
+      0x03,         /*bInterfaceClass: HID*/
+      0x01,         /*bInterfaceSubClass : 1=BOOT, 0=no boot*/
+      0x01,         /*nInterfaceProtocol : 0=none, 1=keyboard, 2=mouse*/
+      0,            /*iInterface: Index of string descriptor*/
+
+      0x09,         /*bLength: HID Descriptor size*/
+      HID_DESCRIPTOR_TYPE, /*bDescriptorType: HID*/
+      0x11,         /*bcdHID: HID Class Spec release number*/
+      0x01,
+      0x00,         /*bCountryCode: Hardware target country*/
+      0x01,         /*bNumDescriptors: Number of HID class descriptors to follow*/
+      0x22,         /*bDescriptorType*/
+	  HID_KeyBoard_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+      0x00,
+
+      0x07,          /*bLength: Endpoint Descriptor size*/
+      USB_DESC_TYPE_ENDPOINT, /*bDescriptorType:*/
+
+      HID_EPIN1_ADDR,     /*bEndpointAddress: Endpoint Address (IN)*/
+      0x03,          /*bmAttributes: Interrupt endpoint*/
+      HID_EPIN1_SIZE, /*wMaxPacketSize: 4 Byte max */
+      0x00,
+      HID_HS_BINTERVAL,          /*bInterval: Polling Interval */
+
+  	 0x07,          /*bLength: Endpoint Descriptor size*/
+  	 USB_DESC_TYPE_ENDPOINT, /*bDescriptorType:*/
+
+  	 HID_EPOUT1_ADDR,     /*bEndpointAddress: Endpoint Address (IN)*/
+  	 0x03,          /*bmAttributes: Interrupt endpoint*/
+  	 HID_EPOUT1_SIZE, /*wMaxPacketSize: 4 Byte max */
+  	 0x00,
+  	 HID_HS_BINTERVAL,          /*bInterval: Polling Interval */
 };
 
 /* USB HID device Other Speed Configuration Descriptor */
@@ -242,7 +322,7 @@ __ALIGN_BEGIN static uint8_t USBD_HID_OtherSpeedCfgDesc[USB_HID_CONFIG_DESC_SIZ]
   USB_HID_CONFIG_DESC_SIZ,
   /* wTotalLength: Bytes returned */
   0x00,
-  0x01,         /*bNumInterfaces: 1 interface*/
+  0x02,         /*bNumInterfaces: 1 interface*/
   0x01,         /*bConfigurationValue: Configuration value*/
   0x00,         /*iConfiguration: Index of string descriptor describing
   the configuration*/
@@ -282,6 +362,44 @@ __ALIGN_BEGIN static uint8_t USBD_HID_OtherSpeedCfgDesc[USB_HID_CONFIG_DESC_SIZ]
   0x00,
   HID_FS_BINTERVAL,          /*bInterval: Polling Interval */
   /* 34 */
+  //添加新接口interface
+      0x09,         /*bLength: Interface Descriptor size*/
+      USB_DESC_TYPE_INTERFACE,/*bDescriptorType: Interface descriptor type*/
+      0x01,         /*bInterfaceNumber: Number of Interface*/
+      0x00,         /*bAlternateSetting: Alternate setting*/
+      0x02,         /*bNumEndpoints*/
+      0x03,         /*bInterfaceClass: HID*/
+      0x01,         /*bInterfaceSubClass : 1=BOOT, 0=no boot*/
+      0x01,         /*nInterfaceProtocol : 0=none, 1=keyboard, 2=mouse*/
+      0,            /*iInterface: Index of string descriptor*/
+
+      0x09,         /*bLength: HID Descriptor size*/
+      HID_DESCRIPTOR_TYPE, /*bDescriptorType: HID*/
+      0x11,         /*bcdHID: HID Class Spec release number*/
+      0x01,
+      0x00,         /*bCountryCode: Hardware target country*/
+      0x01,         /*bNumDescriptors: Number of HID class descriptors to follow*/
+      0x22,         /*bDescriptorType*/
+	  HID_KeyBoard_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+      0x00,
+
+      0x07,          /*bLength: Endpoint Descriptor size*/
+      USB_DESC_TYPE_ENDPOINT, /*bDescriptorType:*/
+
+      HID_EPIN1_ADDR,     /*bEndpointAddress: Endpoint Address (IN)*/
+      0x03,          /*bmAttributes: Interrupt endpoint*/
+      HID_EPIN1_SIZE, /*wMaxPacketSize: 4 Byte max */
+      0x00,
+      HID_FS_BINTERVAL,          /*bInterval: Polling Interval */
+
+  	 0x07,          /*bLength: Endpoint Descriptor size*/
+  	 USB_DESC_TYPE_ENDPOINT, /*bDescriptorType:*/
+
+  	 HID_EPOUT1_ADDR,     /*bEndpointAddress: Endpoint Address (IN)*/
+  	 0x03,          /*bmAttributes: Interrupt endpoint*/
+  	 HID_EPOUT1_SIZE, /*wMaxPacketSize: 4 Byte max */
+  	 0x00,
+  	 HID_FS_BINTERVAL,          /*bInterval: Polling Interval */
 };
 
 
@@ -297,6 +415,22 @@ __ALIGN_BEGIN static uint8_t USBD_HID_Desc[USB_HID_DESC_SIZ]  __ALIGN_END  =
   0x01,         /*bNumDescriptors: Number of HID class descriptors to follow*/
   0x22,         /*bDescriptorType*/
   HID_MOUSE_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+  0x00,
+};
+
+//添加键盘定义
+/* USB HID device Configuration Descriptor */
+__ALIGN_BEGIN static uint8_t USBD_HID1_Desc[USB_HID_DESC_SIZ]  __ALIGN_END  =
+{
+  /* 18 */
+  0x09,         /*bLength: HID Descriptor size*/
+  HID_DESCRIPTOR_TYPE, /*bDescriptorType: HID*/
+  0x11,         /*bcdHID: HID Class Spec release number*/
+  0x01,
+  0x00,         /*bCountryCode: Hardware target country*/
+  0x01,         /*bNumDescriptors: Number of HID class descriptors to follow*/
+  0x22,         /*bDescriptorType*/
+  HID_KeyBoard_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
   0x00,
 };
 
@@ -365,6 +499,43 @@ __ALIGN_BEGIN static uint8_t HID_MOUSE_ReportDesc[HID_MOUSE_REPORT_DESC_SIZE]  _
   0x01,   0xc0
 };
 
+//添加键盘定义
+__ALIGN_BEGIN static uint8_t HID_KeyBoard_ReportDesc[HID_KeyBoard_REPORT_DESC_SIZE]  __ALIGN_END =
+{
+		 	0x05, 0x01,                    // USAGE_PAGE (Generic Desktop)
+		    0x09, 0x06,                    // USAGE (Keyboard)
+		    0xa1, 0x01,                    // COLLECTION (Application)
+		    0x05, 0x07,                    //   USAGE_PAGE (Keyboard)
+		    0x19, 0xe0,                    //   USAGE_MINIMUM (Keyboard LeftControl)
+		    0x29, 0xe7,                    //   USAGE_MAXIMUM (Keyboard Right GUI)
+		    0x15, 0x00,                    //   LOGICAL_MINIMUM (0)
+		    0x25, 0x01,                    //   LOGICAL_MAXIMUM (1)
+		    0x75, 0x01,                    //   REPORT_SIZE (1)
+		    0x95, 0x08,                    //   REPORT_COUNT (8)
+		    0x81, 0x02,                    //   INPUT (Data,Var,Abs)
+		    0x95, 0x01,                    //   REPORT_COUNT (1)
+		    0x75, 0x08,                    //   REPORT_SIZE (8)
+		    0x81, 0x03,                    //   INPUT (Cnst,Var,Abs)
+		    0x95, 0x05,                    //   REPORT_COUNT (5)
+		    0x75, 0x01,                    //   REPORT_SIZE (1)
+		    0x05, 0x08,                    //   USAGE_PAGE (LEDs)
+		    0x19, 0x01,                    //   USAGE_MINIMUM (Num Lock)
+		    0x29, 0x05,                    //   USAGE_MAXIMUM (Kana)
+		    0x91, 0x02,                    //   OUTPUT (Data,Var,Abs)
+		    0x95, 0x01,                    //   REPORT_COUNT (1)
+		    0x75, 0x03,                    //   REPORT_SIZE (3)
+		    0x91, 0x03,                    //   OUTPUT (Cnst,Var,Abs)
+		    0x95, 0x06,                    //   REPORT_COUNT (6)
+		    0x75, 0x08,                    //   REPORT_SIZE (8)
+		    0x15, 0x00,                    //   LOGICAL_MINIMUM (0)
+		    0x25, 0x65,                    //   LOGICAL_MAXIMUM (101)
+		    0x05, 0x07,                    //   USAGE_PAGE (Keyboard)
+		    0x19, 0x00,                    //   USAGE_MINIMUM (Reserved (no event indicated))
+		    0x29, 0x65,                    //   USAGE_MAXIMUM (Keyboard Application)
+		    0x81, 0x00,                    //   INPUT (Data,Ary,Abs)
+		    0xc0                           // END_COLLECTION
+};
+
 /**
   * @}
   */
@@ -385,6 +556,12 @@ static uint8_t  USBD_HID_Init(USBD_HandleTypeDef *pdev, uint8_t cfgidx)
   /* Open EP IN */
   USBD_LL_OpenEP(pdev, HID_EPIN_ADDR, USBD_EP_TYPE_INTR, HID_EPIN_SIZE);
   pdev->ep_in[HID_EPIN_ADDR & 0xFU].is_used = 1U;
+
+  USBD_LL_OpenEP(pdev, HID_EPIN1_ADDR, USBD_EP_TYPE_INTR, HID_EPIN1_SIZE);
+  pdev->ep_in[HID_EPIN1_ADDR & 0xFU].is_used = 1U;
+
+  USBD_LL_OpenEP(pdev, HID_EPOUT1_ADDR, USBD_EP_TYPE_INTR, HID_EPOUT1_SIZE);
+  pdev->ep_out[HID_EPOUT1_ADDR & 0xFU].is_used = 1U;
 
   pdev->pClassData = USBD_malloc(sizeof(USBD_HID_HandleTypeDef));
 
@@ -412,6 +589,11 @@ static uint8_t  USBD_HID_DeInit(USBD_HandleTypeDef *pdev,
   USBD_LL_CloseEP(pdev, HID_EPIN_ADDR);
   pdev->ep_in[HID_EPIN_ADDR & 0xFU].is_used = 0U;
 
+  USBD_LL_CloseEP(pdev, HID_EPIN1_ADDR);
+  pdev->ep_in[HID_EPIN1_ADDR & 0xFU].is_used = 0U;
+
+  USBD_LL_CloseEP(pdev, HID_EPOUT1_ADDR);
+  pdev->ep_out[HID_EPOUT1_ADDR & 0xFU].is_used = 0U;
   /* FRee allocated memory */
   if (pdev->pClassData != NULL)
   {
@@ -483,13 +665,30 @@ static uint8_t  USBD_HID_Setup(USBD_HandleTypeDef *pdev,
         case USB_REQ_GET_DESCRIPTOR:
           if (req->wValue >> 8 == HID_REPORT_DESC)
           {
-            len = MIN(HID_MOUSE_REPORT_DESC_SIZE, req->wLength);
-            pbuf = HID_MOUSE_ReportDesc;
+        	  if(req->wIndex==0)//interface 0
+        		  {
+        		  	  len = MIN(HID_MOUSE_REPORT_DESC_SIZE, req->wLength);
+        		  	  pbuf = HID_MOUSE_ReportDesc;
+        		  }
+        	  if(req->wIndex==1)//interface 1
+        	  	  {
+        		  	  	len = MIN(HID_KeyBoard_REPORT_DESC_SIZE, req->wLength);
+        		        pbuf = HID_KeyBoard_ReportDesc;
+        	  	  }
           }
           else if (req->wValue >> 8 == HID_DESCRIPTOR_TYPE)
           {
-            pbuf = USBD_HID_Desc;
-            len = MIN(USB_HID_DESC_SIZ, req->wLength);
+        	 if(req->wIndex==0)//interface 0
+        	 {
+        		 pbuf = USBD_HID_Desc;
+             	 len = MIN(USB_HID_DESC_SIZ, req->wLength);
+        	 }
+
+        	 if(req->wIndex==1)//interface 1
+        	 {
+        		 pbuf = USBD_HID1_Desc;
+        		 len = MIN(USB_HID_DESC_SIZ, req->wLength);
+        	 }
           }
           else
           {
@@ -560,6 +759,26 @@ uint8_t USBD_HID_SendReport(USBD_HandleTypeDef  *pdev,
       hhid->state = HID_BUSY;
       USBD_LL_Transmit(pdev,
                        HID_EPIN_ADDR,
+                       report,
+                       len);
+    }
+  }
+  return USBD_OK;
+}
+
+uint8_t USBD_HID1_SendReport(USBD_HandleTypeDef  *pdev,
+                            uint8_t *report,
+                            uint16_t len)
+{
+  USBD_HID_HandleTypeDef     *hhid = (USBD_HID_HandleTypeDef *)pdev->pClassData;
+
+  if (pdev->dev_state == USBD_STATE_CONFIGURED)
+  {
+    if (hhid->state == HID_IDLE)
+    {
+      hhid->state = HID_BUSY;
+      USBD_LL_Transmit(pdev,
+                       HID_EPIN1_ADDR,
                        report,
                        len);
     }
