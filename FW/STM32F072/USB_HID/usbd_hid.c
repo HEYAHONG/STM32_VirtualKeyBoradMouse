@@ -253,7 +253,7 @@ __ALIGN_BEGIN static  uint8_t USBD_HID_CfgFSDesc[USB_HID_CONFIG_DESC_SIZ]  __ALI
 	     0x03,          /*bmAttributes: Interrupt endpoint*/
 	     HID_EPIN2_SIZE, /*wMaxPacketSize: 4 Byte max */
 	     0x00,
-	     HID_FS_BINTERVAL,          /*bInterval: Polling Interval */
+		 HID_Config_BINTERVAL,          /*bInterval: Polling Interval */
 
 	 	 0x07,          /*bLength: Endpoint Descriptor size*/
 	 	 USB_DESC_TYPE_ENDPOINT, /*bDescriptorType:*/
@@ -262,7 +262,7 @@ __ALIGN_BEGIN static  uint8_t USBD_HID_CfgFSDesc[USB_HID_CONFIG_DESC_SIZ]  __ALI
 	 	 0x03,          /*bmAttributes: Interrupt endpoint*/
 	 	 HID_EPOUT2_SIZE, /*wMaxPacketSize: 4 Byte max */
 	 	 0x00,
-	 	 HID_FS_BINTERVAL,          /*bInterval: Polling Interval */
+		 HID_Config_BINTERVAL,          /*bInterval: Polling Interval */
 };
 
 /* USB HID device HS Configuration Descriptor */
@@ -381,7 +381,7 @@ __ALIGN_BEGIN static  uint8_t USBD_HID_CfgHSDesc[USB_HID_CONFIG_DESC_SIZ]  __ALI
 	 	     0x03,          /*bmAttributes: Interrupt endpoint*/
 	 	     HID_EPIN2_SIZE, /*wMaxPacketSize: 4 Byte max */
 	 	     0x00,
-	 	     HID_HS_BINTERVAL,          /*bInterval: Polling Interval */
+			 HID_Config_BINTERVAL,          /*bInterval: Polling Interval */
 
 	 	 	 0x07,          /*bLength: Endpoint Descriptor size*/
 	 	 	 USB_DESC_TYPE_ENDPOINT, /*bDescriptorType:*/
@@ -390,7 +390,7 @@ __ALIGN_BEGIN static  uint8_t USBD_HID_CfgHSDesc[USB_HID_CONFIG_DESC_SIZ]  __ALI
 	 	 	 0x03,          /*bmAttributes: Interrupt endpoint*/
 	 	 	 HID_EPOUT2_SIZE, /*wMaxPacketSize: 4 Byte max */
 	 	 	 0x00,
-	 	 	 HID_HS_BINTERVAL,          /*bInterval: Polling Interval */
+			 HID_Config_BINTERVAL,          /*bInterval: Polling Interval */
 };
 
 /* USB HID device Other Speed Configuration Descriptor */
@@ -507,7 +507,7 @@ __ALIGN_BEGIN static  uint8_t USBD_HID_OtherSpeedCfgDesc[USB_HID_CONFIG_DESC_SIZ
 	 	     0x03,          /*bmAttributes: Interrupt endpoint*/
 	 	     HID_EPIN2_SIZE, /*wMaxPacketSize: 4 Byte max */
 	 	     0x00,
-	 	     HID_FS_BINTERVAL,          /*bInterval: Polling Interval */
+			 HID_Config_BINTERVAL,          /*bInterval: Polling Interval */
 
 	 	 	 0x07,          /*bLength: Endpoint Descriptor size*/
 	 	 	 USB_DESC_TYPE_ENDPOINT, /*bDescriptorType:*/
@@ -516,7 +516,7 @@ __ALIGN_BEGIN static  uint8_t USBD_HID_OtherSpeedCfgDesc[USB_HID_CONFIG_DESC_SIZ
 	 	 	 0x03,          /*bmAttributes: Interrupt endpoint*/
 	 	 	 HID_EPOUT2_SIZE, /*wMaxPacketSize: 4 Byte max */
 	 	 	 0x00,
-	 	 	 HID_FS_BINTERVAL,          /*bInterval: Polling Interval */
+			 HID_Config_BINTERVAL,          /*bInterval: Polling Interval */
 };
 
 
@@ -803,6 +803,7 @@ static uint8_t  USBD_HID_DeInit(USBD_HandleTypeDef *pdev,
   * @param  req: usb requests
   * @retval status
   */
+
 static uint8_t  USBD_HID_Setup(USBD_HandleTypeDef *pdev,
                                USBD_SetupReqTypedef *req)
 {
@@ -832,6 +833,9 @@ static uint8_t  USBD_HID_Setup(USBD_HandleTypeDef *pdev,
         case HID_REQ_GET_IDLE:
           USBD_CtlSendData(pdev, (uint8_t *)(void *)&hhid->IdleState, 1U);
           break;
+       // case HID_REQ_SET_REPORT:
+       //   USBD_CtlPrepareRx(pdev,Report_buff, req->wLength);
+       //   break;
 
         default:
           USBD_CtlError(pdev, req);
@@ -1033,6 +1037,8 @@ uint32_t USBD_HID_GetPollingInterval(USBD_HandleTypeDef *pdev)
     speed transfers */
     polling_interval =  HID_FS_BINTERVAL;
   }
+
+
 
   return ((uint32_t)(polling_interval));
 }

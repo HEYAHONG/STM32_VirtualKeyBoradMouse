@@ -68,6 +68,8 @@ extern "C" {
 //添加配置接口相关定义
 #define HID_Config_REPORT_DESC_SIZE    44U
 
+#define HID_Config_BINTERVAL		1U
+
 #define HID_DESCRIPTOR_TYPE           0x21U
 #define HID_REPORT_DESC               0x22U
 
