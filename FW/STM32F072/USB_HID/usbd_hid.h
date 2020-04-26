@@ -48,15 +48,15 @@ extern "C" {
 #define HID_EPIN1_ADDR				  0x82U
 #define HID_EPIN1_SIZE				  0x08U
 
-#define HID_EPOUT1_ADDR				  0x02U
+#define HID_EPOUT1_ADDR				  0x03U
 #define HID_EPOUT1_SIZE				  0x01U
 
 //添加配置接口相关定义
-#define HID_EPIN2_ADDR				  0x83U
-#define HID_EPIN2_SIZE				  64U
+#define HID_EPIN2_ADDR				  0x84U
+#define HID_EPIN2_SIZE				  8U
 
-#define HID_EPOUT2_ADDR				  0x03U
-#define HID_EPOUT2_SIZE				  64U
+#define HID_EPOUT2_ADDR				  0x05U
+#define HID_EPOUT2_SIZE				  8U
 
 #define USB_HID_CONFIG_DESC_SIZ       98U
 #define USB_HID_DESC_SIZ              9U
