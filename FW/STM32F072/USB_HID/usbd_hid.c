@@ -250,7 +250,7 @@ __ALIGN_BEGIN static  uint8_t USBD_HID_CfgFSDesc[USB_HID_CONFIG_DESC_SIZ]  __ALI
 	     USB_DESC_TYPE_ENDPOINT, /*bDescriptorType:*/
 
 	     HID_EPIN2_ADDR,     /*bEndpointAddress: Endpoint Address (IN)*/
-	     0x03,          /*bmAttributes: Interrupt endpoint*/
+	     0x02,          /*bmAttributes: 批量  endpoint*/
 	     HID_EPIN2_SIZE, /*wMaxPacketSize: 4 Byte max */
 	     0x00,
 		 HID_Config_BINTERVAL,          /*bInterval: Polling Interval */
@@ -259,7 +259,7 @@ __ALIGN_BEGIN static  uint8_t USBD_HID_CfgFSDesc[USB_HID_CONFIG_DESC_SIZ]  __ALI
 	 	 USB_DESC_TYPE_ENDPOINT, /*bDescriptorType:*/
 
 	 	 HID_EPOUT2_ADDR,     /*bEndpointAddress: Endpoint Address (IN)*/
-	 	 0x03,          /*bmAttributes: Interrupt endpoint*/
+	 	 0x02,          /*bmAttributes: 批量  endpoint*/
 	 	 HID_EPOUT2_SIZE, /*wMaxPacketSize: 4 Byte max */
 	 	 0x00,
 		 HID_Config_BINTERVAL,          /*bInterval: Polling Interval */
