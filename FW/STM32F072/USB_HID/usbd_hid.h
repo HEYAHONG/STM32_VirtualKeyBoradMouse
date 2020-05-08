@@ -148,7 +148,7 @@ uint8_t USBD_HID_SendReport(USBD_HandleTypeDef *pdev,
 uint8_t USBD_HID1_SendReport(USBD_HandleTypeDef *pdev,
                             uint8_t *report,
                             uint16_t len);
-//键盘的报告函数
+//
 uint8_t USBD_HID2_SendReport(USBD_HandleTypeDef *pdev,
                             uint8_t *report,
                             uint16_t len);

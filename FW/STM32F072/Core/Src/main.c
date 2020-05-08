@@ -25,6 +25,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include  "usbd_hid.h"
+#include  "KeyScan.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -123,10 +124,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	 HAL_Delay(2000);
-	 static uint8_t buff[64]={0x04,0x60,0x60,0x00};
-	 extern USBD_HandleTypeDef hUsbDeviceFS;
-//	 USBD_HID2_SendReport(&hUsbDeviceFS,buff,sizeof(buff));
+	HAL_Delay(20);
+	keyscan();
 
     /* USER CODE BEGIN 3 */
   }
