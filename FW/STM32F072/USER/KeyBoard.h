@@ -148,6 +148,8 @@ void KeyBoard_Set_Default(KeyBoard_Data *p);
 //发送按键
 void KeyBoard_Send_Data(KeyBoard_Data *p);
 
+uint8_t KeyBoard_Set_key(KeyBoard_Data *p,uint8_t key);//设置一个普通按键，成功返回非0
+
 
 
 #endif /* USER_KEYBOARD_H_ */
