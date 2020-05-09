@@ -4095,7 +4095,7 @@ LOAD c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000008000000                g_pfnVectors
                 0x00000000080000c0                . = ALIGN (0x4)
 
-.text           0x00000000080000c0     0x6168
+.text           0x00000000080000c0     0x61ec
                 0x00000000080000c0                . = ALIGN (0x4)
  *(.text)
  .text          0x00000000080000c0       0x48 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
@@ -4545,109 +4545,109 @@ LOAD c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000008005de4       0x68 USB_HID/usbd_hid.o
  .text.USBD_HID_GetDeviceQualifierDesc
                 0x0000000008005e4c       0x1c USB_HID/usbd_hid.o
- .text.keyscan  0x0000000008005e68      0x224 USER/KeyScan.o
+ .text.keyscan  0x0000000008005e68      0x2a8 USER/KeyScan.o
                 0x0000000008005e68                keyscan
  .text.Mouse_Set_X
-                0x000000000800608c       0x62 USER/Mouse.o
-                0x000000000800608c                Mouse_Set_X
+                0x0000000008006110       0x62 USER/Mouse.o
+                0x0000000008006110                Mouse_Set_X
  .text.Mouse_Set_Y
-                0x00000000080060ee       0x62 USER/Mouse.o
-                0x00000000080060ee                Mouse_Set_Y
+                0x0000000008006172       0x62 USER/Mouse.o
+                0x0000000008006172                Mouse_Set_Y
  .text.Mouse_Set_Default
-                0x0000000008006150       0x48 USER/Mouse.o
-                0x0000000008006150                Mouse_Set_Default
+                0x00000000080061d4       0x48 USER/Mouse.o
+                0x00000000080061d4                Mouse_Set_Default
  .text.Mouse_Send_Data
-                0x0000000008006198       0x20 USER/Mouse.o
-                0x0000000008006198                Mouse_Send_Data
+                0x000000000800621c       0x20 USER/Mouse.o
+                0x000000000800621c                Mouse_Send_Data
  .text.__libc_init_array
-                0x00000000080061b8       0x48 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-init.o)
-                0x00000000080061b8                __libc_init_array
- .text.memset   0x0000000008006200       0x10 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memset.o)
-                0x0000000008006200                memset
+                0x000000000800623c       0x48 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-init.o)
+                0x000000000800623c                __libc_init_array
+ .text.memset   0x0000000008006284       0x10 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memset.o)
+                0x0000000008006284                memset
  *(.glue_7)
- .glue_7        0x0000000008006210        0x0 linker stubs
+ .glue_7        0x0000000008006294        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0000000008006210        0x0 linker stubs
+ .glue_7t       0x0000000008006294        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x0000000008006210        0x0 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
+ .eh_frame      0x0000000008006294        0x0 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
  *(.init)
- .init          0x0000000008006210        0x4 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crti.o
-                0x0000000008006210                _init
- .init          0x0000000008006214        0x8 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtn.o
+ .init          0x0000000008006294        0x4 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crti.o
+                0x0000000008006294                _init
+ .init          0x0000000008006298        0x8 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtn.o
  *(.fini)
- .fini          0x000000000800621c        0x4 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crti.o
-                0x000000000800621c                _fini
- .fini          0x0000000008006220        0x8 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtn.o
-                0x0000000008006228                . = ALIGN (0x4)
-                0x0000000008006228                _etext = .
+ .fini          0x00000000080062a0        0x4 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crti.o
+                0x00000000080062a0                _fini
+ .fini          0x00000000080062a4        0x8 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtn.o
+                0x00000000080062ac                . = ALIGN (0x4)
+                0x00000000080062ac                _etext = .
 
-.vfp11_veneer   0x0000000008006228        0x0
- .vfp11_veneer  0x0000000008006228        0x0 linker stubs
+.vfp11_veneer   0x00000000080062ac        0x0
+ .vfp11_veneer  0x00000000080062ac        0x0 linker stubs
 
-.v4_bx          0x0000000008006228        0x0
- .v4_bx         0x0000000008006228        0x0 linker stubs
+.v4_bx          0x00000000080062ac        0x0
+ .v4_bx         0x00000000080062ac        0x0 linker stubs
 
-.iplt           0x0000000008006228        0x0
- .iplt          0x0000000008006228        0x0 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
+.iplt           0x00000000080062ac        0x0
+ .iplt          0x00000000080062ac        0x0 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
 
-.rodata         0x0000000008006228       0xd4
-                0x0000000008006228                . = ALIGN (0x4)
+.rodata         0x00000000080062ac       0xd4
+                0x00000000080062ac                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x0000000008006228       0x20 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o
- .rodata        0x0000000008006248       0x42 USB_HID/usbd_desc.o
+ .rodata        0x00000000080062ac       0x20 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o
+ .rodata        0x00000000080062cc       0x42 USB_HID/usbd_desc.o
  *(.rodata*)
- *fill*         0x000000000800628a        0x2 
+ *fill*         0x000000000800630e        0x2 
  .rodata.AHBPrescTable
-                0x000000000800628c       0x10 Core/Src/system_stm32f0xx.o
-                0x000000000800628c                AHBPrescTable
+                0x0000000008006310       0x10 Core/Src/system_stm32f0xx.o
+                0x0000000008006310                AHBPrescTable
  .rodata.USBD_StdDevReq
-                0x000000000800629c       0x28 Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+                0x0000000008006320       0x28 Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
  .rodata.USBD_GetDescriptor
-                0x00000000080062c4       0x38 Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
-                0x00000000080062fc                . = ALIGN (0x4)
+                0x0000000008006348       0x38 Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+                0x0000000008006380                . = ALIGN (0x4)
 
-.rel.dyn        0x00000000080062fc        0x0
- .rel.iplt      0x00000000080062fc        0x0 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
+.rel.dyn        0x0000000008006380        0x0
+ .rel.iplt      0x0000000008006380        0x0 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
 
-.ARM.extab      0x00000000080062fc        0x0
-                0x00000000080062fc                . = ALIGN (0x4)
+.ARM.extab      0x0000000008006380        0x0
+                0x0000000008006380                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000000080062fc                . = ALIGN (0x4)
+                0x0000000008006380                . = ALIGN (0x4)
 
-.ARM            0x00000000080062fc        0x0
-                0x00000000080062fc                . = ALIGN (0x4)
-                0x00000000080062fc                __exidx_start = .
+.ARM            0x0000000008006380        0x0
+                0x0000000008006380                . = ALIGN (0x4)
+                0x0000000008006380                __exidx_start = .
  *(.ARM.exidx*)
-                0x00000000080062fc                __exidx_end = .
-                0x00000000080062fc                . = ALIGN (0x4)
+                0x0000000008006380                __exidx_end = .
+                0x0000000008006380                . = ALIGN (0x4)
 
-.preinit_array  0x00000000080062fc        0x0
-                0x00000000080062fc                . = ALIGN (0x4)
-                0x00000000080062fc                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0000000008006380        0x0
+                0x0000000008006380                . = ALIGN (0x4)
+                0x0000000008006380                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x00000000080062fc                PROVIDE (__preinit_array_end = .)
-                0x00000000080062fc                . = ALIGN (0x4)
+                0x0000000008006380                PROVIDE (__preinit_array_end = .)
+                0x0000000008006380                . = ALIGN (0x4)
 
-.init_array     0x00000000080062fc        0x4
-                0x00000000080062fc                . = ALIGN (0x4)
-                0x00000000080062fc                PROVIDE (__init_array_start = .)
+.init_array     0x0000000008006380        0x4
+                0x0000000008006380                . = ALIGN (0x4)
+                0x0000000008006380                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x00000000080062fc        0x4 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
-                0x0000000008006300                PROVIDE (__init_array_end = .)
-                0x0000000008006300                . = ALIGN (0x4)
+ .init_array    0x0000000008006380        0x4 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
+                0x0000000008006384                PROVIDE (__init_array_end = .)
+                0x0000000008006384                . = ALIGN (0x4)
 
-.fini_array     0x0000000008006300        0x4
-                0x0000000008006300                . = ALIGN (0x4)
+.fini_array     0x0000000008006384        0x4
+                0x0000000008006384                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0000000008006300        0x4 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
+ .fini_array    0x0000000008006384        0x4 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x0000000008006304                . = ALIGN (0x4)
-                0x0000000008006304                _sidata = LOADADDR (.data)
+                0x0000000008006388                . = ALIGN (0x4)
+                0x0000000008006388                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000      0x2a8 load address 0x0000000008006304
+.data           0x0000000020000000      0x2b8 load address 0x0000000008006388
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -4707,52 +4707,60 @@ LOAD c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  *fill*         0x000000002000027b        0x1 
  .data.HID_Config_ReportDesc
                 0x000000002000027c       0x2c USB_HID/usbd_hid.o
-                0x00000000200002a8                . = ALIGN (0x4)
-                0x00000000200002a8                _edata = .
+ .data.U_Step.5948
+                0x00000000200002a8        0x4 USER/KeyScan.o
+ .data.D_Step.5949
+                0x00000000200002ac        0x4 USER/KeyScan.o
+ .data.R_Step.5946
+                0x00000000200002b0        0x4 USER/KeyScan.o
+ .data.L_Step.5947
+                0x00000000200002b4        0x4 USER/KeyScan.o
+                0x00000000200002b8                . = ALIGN (0x4)
+                0x00000000200002b8                _edata = .
 
-.igot.plt       0x00000000200002a8        0x0 load address 0x00000000080065ac
- .igot.plt      0x00000000200002a8        0x0 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
-                0x00000000200002a8                . = ALIGN (0x4)
+.igot.plt       0x00000000200002b8        0x0 load address 0x0000000008006640
+ .igot.plt      0x00000000200002b8        0x0 c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
+                0x00000000200002b8                . = ALIGN (0x4)
 
-.bss            0x00000000200002a8      0x7b4 load address 0x00000000080065ac
-                0x00000000200002a8                _sbss = .
-                0x00000000200002a8                __bss_start__ = _sbss
+.bss            0x00000000200002b8      0x7b4 load address 0x0000000008006640
+                0x00000000200002b8                _sbss = .
+                0x00000000200002b8                __bss_start__ = _sbss
  *(.bss)
- .bss           0x00000000200002a8       0x1c c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
+ .bss           0x00000000200002b8       0x1c c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
  *(.bss*)
  .bss.cfgidx.7765
-                0x00000000200002c4        0x1 Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
- *fill*         0x00000000200002c5        0x3 
- .bss.mem.7814  0x00000000200002c8       0x14 USB_DEVICE/Target/usbd_conf.o
+                0x00000000200002d4        0x1 Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+ *fill*         0x00000000200002d5        0x3 
+ .bss.mem.7814  0x00000000200002d8       0x14 USB_DEVICE/Target/usbd_conf.o
  .bss.hid1_rx_buff
-                0x00000000200002dc        0x1 USB_HID/usbd_hid.o
- *fill*         0x00000000200002dd        0x3 
+                0x00000000200002ec        0x1 USB_HID/usbd_hid.o
+ *fill*         0x00000000200002ed        0x3 
  .bss.hid2_rx_buff
-                0x00000000200002e0       0x40 USB_HID/usbd_hid.o
+                0x00000000200002f0       0x40 USB_HID/usbd_hid.o
  *(COMMON)
- COMMON         0x0000000020000320        0x4 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o
-                0x0000000020000320                uwTick
- COMMON         0x0000000020000324      0x274 USB_DEVICE/Target/usbd_conf.o
-                0x0000000020000324                hpcd_USB_FS
- COMMON         0x0000000020000598      0x2c4 USB_HID/usb_device.o
-                0x0000000020000598                hUsbDeviceFS
- COMMON         0x000000002000085c      0x200 USB_HID/usbd_desc.o
-                0x000000002000085c                USBD_StrDesc
-                0x0000000020000a5c                . = ALIGN (0x4)
-                0x0000000020000a5c                _ebss = .
-                0x0000000020000a5c                __bss_end__ = _ebss
+ COMMON         0x0000000020000330        0x4 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o
+                0x0000000020000330                uwTick
+ COMMON         0x0000000020000334      0x274 USB_DEVICE/Target/usbd_conf.o
+                0x0000000020000334                hpcd_USB_FS
+ COMMON         0x00000000200005a8      0x2c4 USB_HID/usb_device.o
+                0x00000000200005a8                hUsbDeviceFS
+ COMMON         0x000000002000086c      0x200 USB_HID/usbd_desc.o
+                0x000000002000086c                USBD_StrDesc
+                0x0000000020000a6c                . = ALIGN (0x4)
+                0x0000000020000a6c                _ebss = .
+                0x0000000020000a6c                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x0000000020000a5c      0xc04 load address 0x00000000080065ac
-                0x0000000020000a60                . = ALIGN (0x8)
- *fill*         0x0000000020000a5c        0x4 
-                0x0000000020000a60                PROVIDE (end = .)
+                0x0000000020000a6c      0xc04 load address 0x0000000008006640
+                0x0000000020000a70                . = ALIGN (0x8)
+ *fill*         0x0000000020000a6c        0x4 
+                0x0000000020000a70                PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
-                0x0000000020000e60                . = (. + _Min_Heap_Size)
- *fill*         0x0000000020000a60      0x400 
-                0x0000000020001660                . = (. + _Min_Stack_Size)
- *fill*         0x0000000020000e60      0x800 
-                0x0000000020001660                . = ALIGN (0x8)
+                0x0000000020000e70                . = (. + _Min_Heap_Size)
+ *fill*         0x0000000020000a70      0x400 
+                0x0000000020001670                . = (. + _Min_Stack_Size)
+ *fill*         0x0000000020000e70      0x800 
+                0x0000000020001670                . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -4822,7 +4830,7 @@ LOAD c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000000000504       0x1e c:/st/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtn.o
 OUTPUT(VirtualKeyBoradMouse.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000     0xfbfb
+.debug_info     0x0000000000000000     0xfc3f
  .debug_info    0x0000000000000000     0x123a Core/Src/main.o
  .debug_info    0x000000000000123a      0x25e Core/Src/stm32f0xx_hal_msp.o
  .debug_info    0x0000000000001498      0x667 Core/Src/stm32f0xx_it.o
@@ -4843,8 +4851,8 @@ OUTPUT(VirtualKeyBoradMouse.elf elf32-littlearm)
  .debug_info    0x000000000000bb6f      0xda4 USB_HID/usb_device.o
  .debug_info    0x000000000000c913      0xcf3 USB_HID/usbd_desc.o
  .debug_info    0x000000000000d606     0x12e0 USB_HID/usbd_hid.o
- .debug_info    0x000000000000e8e6      0x3be USER/KeyScan.o
- .debug_info    0x000000000000eca4      0xf57 USER/Mouse.o
+ .debug_info    0x000000000000e8e6      0x402 USER/KeyScan.o
+ .debug_info    0x000000000000ece8      0xf57 USER/Mouse.o
 
 .debug_abbrev   0x0000000000000000     0x2a1f
  .debug_abbrev  0x0000000000000000      0x220 Core/Src/main.o
@@ -5040,7 +5048,7 @@ OUTPUT(VirtualKeyBoradMouse.elf elf32-littlearm)
  .debug_macro   0x0000000000017cf8       0x22 USER/KeyScan.o
  .debug_macro   0x0000000000017d1a      0x3d8 USER/Mouse.o
 
-.debug_line     0x0000000000000000     0xc32e
+.debug_line     0x0000000000000000     0xc336
  .debug_line    0x0000000000000000      0xa61 Core/Src/main.o
  .debug_line    0x0000000000000a61      0x67f Core/Src/stm32f0xx_hal_msp.o
  .debug_line    0x00000000000010e0      0x6e5 Core/Src/stm32f0xx_it.o
@@ -5061,10 +5069,10 @@ OUTPUT(VirtualKeyBoradMouse.elf elf32-littlearm)
  .debug_line    0x0000000000009487      0x969 USB_HID/usb_device.o
  .debug_line    0x0000000000009df0      0xa07 USB_HID/usbd_desc.o
  .debug_line    0x000000000000a7f7      0xab0 USB_HID/usbd_hid.o
- .debug_line    0x000000000000b2a7      0x6bd USER/KeyScan.o
- .debug_line    0x000000000000b964      0x9ca USER/Mouse.o
+ .debug_line    0x000000000000b2a7      0x6c5 USER/KeyScan.o
+ .debug_line    0x000000000000b96c      0x9ca USER/Mouse.o
 
-.debug_str      0x0000000000000000    0x7866d
+.debug_str      0x0000000000000000    0x78689
  .debug_str     0x0000000000000000    0x75e86 Core/Src/main.o
                                       0x761b6 (size before relaxing)
  .debug_str     0x0000000000075e86       0x2c Core/Src/stm32f0xx_hal_msp.o
@@ -5105,9 +5113,9 @@ OUTPUT(VirtualKeyBoradMouse.elf elf32-littlearm)
                                       0x75c43 (size before relaxing)
  .debug_str     0x0000000000078253      0x2a6 USB_HID/usbd_hid.o
                                       0x7615f (size before relaxing)
- .debug_str     0x00000000000784f9      0x112 USER/KeyScan.o
-                                      0x70dd3 (size before relaxing)
- .debug_str     0x000000000007860b       0x62 USER/Mouse.o
+ .debug_str     0x00000000000784f9      0x12e USER/KeyScan.o
+                                      0x70def (size before relaxing)
+ .debug_str     0x0000000000078627       0x62 USER/Mouse.o
                                       0x75f6b (size before relaxing)
 
 .comment        0x0000000000000000       0x7b
