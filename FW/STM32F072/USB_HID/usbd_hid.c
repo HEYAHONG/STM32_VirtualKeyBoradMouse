@@ -46,7 +46,7 @@ EndBSPDependencies */
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_hid.h"
 #include "usbd_ctlreq.h"
-
+#include "VKBM_Config.h"
 
 /** @addtogroup STM32_USB_DEVICE_LIBRARY
   * @{
@@ -1107,15 +1107,14 @@ static uint8_t  USBD_HID_DataOut(USBD_HandleTypeDef *pdev,
  if(epnum==HID_EPOUT1_ADDR)
 {
 
-
+	 VKBM_KeyBoard_Receive(hid1_rx_buff,data_size);
 	//再次接收
 	USBD_LL_PrepareReceive(pdev, HID_EPOUT1_ADDR,hid1_rx_buff,HID_EPOUT1_SIZE);
  }
  if(epnum==HID_EPOUT2_ADDR)
  {
 
-	 //测试发送
-	 USBD_HID2_SendReport(pdev,hid2_rx_buff,data_size);
+	 VKBM_Config_Receive(hid2_rx_buff,data_size);
 
 	 //再次接收
 	 USBD_LL_PrepareReceive(pdev, HID_EPOUT2_ADDR,hid2_rx_buff,HID_EPOUT2_SIZE);
