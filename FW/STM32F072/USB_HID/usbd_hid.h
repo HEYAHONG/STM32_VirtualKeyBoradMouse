@@ -52,13 +52,13 @@ extern "C" {
 #define HID_EPOUT1_SIZE				  0x01U
 
 //添加配置接口相关定义
-#define HID_EPIN2_ADDR				  0x84U
+#define HID_EPIN2_ADDR				  0x85U
 #define HID_EPIN2_SIZE				  64U
 
-#define HID_EPOUT2_ADDR				  0x05U
+#define HID_EPOUT2_ADDR				  0x04U
 #define HID_EPOUT2_SIZE				  64U
 
-#define USB_HID_CONFIG_DESC_SIZ       98U
+#define USB_HID_CONFIG_DESC_SIZ       89U
 #define USB_HID_DESC_SIZ              9U
 #define HID_MOUSE_REPORT_DESC_SIZE    74U
 

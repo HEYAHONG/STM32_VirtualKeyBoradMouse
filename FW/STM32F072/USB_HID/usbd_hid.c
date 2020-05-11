@@ -231,20 +231,20 @@ __ALIGN_BEGIN static  uint8_t USBD_HID_CfgFSDesc[USB_HID_CONFIG_DESC_SIZ]  __ALI
 	     0x02,         /*bInterfaceNumber: Number of Interface*/
 	     0x00,         /*bAlternateSetting: Alternate setting*/
 	     0x02,         /*bNumEndpoints*/
-	     0x03,         /*bInterfaceClass: HID*/
+	     0xFF,         /*bInterfaceClass: HID*/
 	     0x00,         /*bInterfaceSubClass : 1=BOOT, 0=no boot*/
 	     0x00,         /*nInterfaceProtocol : 0=none, 1=keyboard, 2=mouse*/
 	     0,            /*iInterface: Index of string descriptor*/
 
-	     0x09,         /*bLength: HID Descriptor size*/
-	     HID_DESCRIPTOR_TYPE, /*bDescriptorType: HID*/
-	     0x11,         /*bcdHID: HID Class Spec release number*/
-	     0x01,
-	     0x00,         /*bCountryCode: Hardware target country*/
-	     0x01,         /*bNumDescriptors: Number of HID class descriptors to follow*/
-	     0x22,         /*bDescriptorType*/
-	     HID_Config_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
-	     0x00,
+	//     0x09,         /*bLength: HID Descriptor size*/
+	 //    HID_DESCRIPTOR_TYPE, /*bDescriptorType: HID*/
+	 //    0x11,         /*bcdHID: HID Class Spec release number*/
+	 //    0x01,
+	 //    0x00,         /*bCountryCode: Hardware target country*/
+	 //    0x01,         /*bNumDescriptors: Number of HID class descriptors to follow*/
+	 //    0x22,         /*bDescriptorType*/
+	 //    HID_Config_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+	 //    0x00,
 
 	     0x07,          /*bLength: Endpoint Descriptor size*/
 	     USB_DESC_TYPE_ENDPOINT, /*bDescriptorType:*/
@@ -359,20 +359,20 @@ __ALIGN_BEGIN static  uint8_t USBD_HID_CfgHSDesc[USB_HID_CONFIG_DESC_SIZ]  __ALI
 	 	     0x02,         /*bInterfaceNumber: Number of Interface*/
 	 	     0x00,         /*bAlternateSetting: Alternate setting*/
 	 	     0x02,         /*bNumEndpoints*/
-	 	     0x03,         /*bInterfaceClass: HID*/
+	 	     0xFF,         /*bInterfaceClass: HID*/
 	 	     0x00,         /*bInterfaceSubClass : 1=BOOT, 0=no boot*/
 	 	     0x00,         /*nInterfaceProtocol : 0=none, 1=keyboard, 2=mouse*/
 	 	     0,            /*iInterface: Index of string descriptor*/
 
-	 	     0x09,         /*bLength: HID Descriptor size*/
-	 	     HID_DESCRIPTOR_TYPE, /*bDescriptorType: HID*/
-	 	     0x11,         /*bcdHID: HID Class Spec release number*/
-	 	     0x01,
-	 	     0x00,         /*bCountryCode: Hardware target country*/
-	 	     0x01,         /*bNumDescriptors: Number of HID class descriptors to follow*/
-	 	     0x22,         /*bDescriptorType*/
-	 	     HID_Config_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
-	 	     0x00,
+	 	  //   0x09,         /*bLength: HID Descriptor size*/
+	 	  //   HID_DESCRIPTOR_TYPE, /*bDescriptorType: HID*/
+	 	  //   0x11,         /*bcdHID: HID Class Spec release number*/
+	 	  //   0x01,
+	 	  //   0x00,         /*bCountryCode: Hardware target country*/
+	 	  //   0x01,         /*bNumDescriptors: Number of HID class descriptors to follow*/
+	 	  //   0x22,         /*bDescriptorType*/
+	 	  //   HID_Config_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+	 	  //   0x00,
 
 	 	     0x07,          /*bLength: Endpoint Descriptor size*/
 	 	     USB_DESC_TYPE_ENDPOINT, /*bDescriptorType:*/
@@ -485,20 +485,20 @@ __ALIGN_BEGIN static  uint8_t USBD_HID_OtherSpeedCfgDesc[USB_HID_CONFIG_DESC_SIZ
 	 	     0x02,         /*bInterfaceNumber: Number of Interface*/
 	 	     0x00,         /*bAlternateSetting: Alternate setting*/
 	 	     0x02,         /*bNumEndpoints*/
-	 	     0x03,         /*bInterfaceClass: HID*/
-	 	     0x00,         /*bInterfaceSubClass : 1=BOOT, 0=no boot*/
-	 	     0x00,         /*nInterfaceProtocol : 0=none, 1=keyboard, 2=mouse*/
+	 	     0xFF,         /*bInterfaceClass:*/
+	 	     0x00,         /*bInterfaceSubClass */
+	 	     0x00,         /*nInterfaceProtocol */
 	 	     0,            /*iInterface: Index of string descriptor*/
 
-	 	     0x09,         /*bLength: HID Descriptor size*/
-	 	     HID_DESCRIPTOR_TYPE, /*bDescriptorType: HID*/
-	 	     0x11,         /*bcdHID: HID Class Spec release number*/
-	 	     0x01,
-	 	     0x00,         /*bCountryCode: Hardware target country*/
-	 	     0x01,         /*bNumDescriptors: Number of HID class descriptors to follow*/
-	 	     0x22,         /*bDescriptorType*/
-	 	     HID_Config_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
-	 	     0x00,
+	 	  //   0x09,         /*bLength: HID Descriptor size*/
+	 	  //   HID_DESCRIPTOR_TYPE, /*bDescriptorType: HID*/
+	 	  //   0x11,         /*bcdHID: HID Class Spec release number*/
+	 	  //   0x01,
+	 	  //   0x00,         /*bCountryCode: Hardware target country*/
+	 	  //  0x01,         /*bNumDescriptors: Number of HID class descriptors to follow*/
+	 	  //  0x22,         /*bDescriptorType*/
+	 	  //  HID_Config_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+	 	  //   0x00,
 
 	 	     0x07,          /*bLength: Endpoint Descriptor size*/
 	 	     USB_DESC_TYPE_ENDPOINT, /*bDescriptorType:*/
@@ -701,8 +701,8 @@ __ALIGN_BEGIN static  uint8_t HID_Config_ReportDesc[HID_Config_REPORT_DESC_SIZE]
 /** @defgroup USBD_HID_Private_Functions
   * @{
   */
-static uint8_t hid1_rx_buff[HID_EPOUT1_SIZE]={};
-static uint8_t hid2_rx_buff[HID_EPOUT2_SIZE]={};
+__ALIGN_BEGIN static uint8_t hid1_rx_buff[HID_EPOUT1_SIZE] __ALIGN_END ={};
+__ALIGN_BEGIN static uint8_t hid2_rx_buff[HID_EPOUT2_SIZE] __ALIGN_END ={};
 static void set_rx_buff(USBD_HandleTypeDef * pdev)
 {//设置接收缓冲区(防止接收时崩溃)
 
