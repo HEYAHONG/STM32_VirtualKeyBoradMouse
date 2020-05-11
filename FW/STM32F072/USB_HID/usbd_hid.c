@@ -732,10 +732,10 @@ static uint8_t  USBD_HID_Init(USBD_HandleTypeDef *pdev, uint8_t cfgidx)
   USBD_LL_OpenEP(pdev, HID_EPOUT1_ADDR, USBD_EP_TYPE_INTR, HID_EPOUT1_SIZE);
   pdev->ep_out[HID_EPOUT1_ADDR & 0xFU].is_used = 1U;
 
-  USBD_LL_OpenEP(pdev, HID_EPIN2_ADDR, USBD_EP_TYPE_INTR, HID_EPIN2_SIZE);
+  USBD_LL_OpenEP(pdev, HID_EPIN2_ADDR, USBD_EP_TYPE_BULK, HID_EPIN2_SIZE);
     pdev->ep_in[HID_EPIN2_ADDR & 0xFU].is_used = 1U;
 
-  USBD_LL_OpenEP(pdev, HID_EPOUT2_ADDR, USBD_EP_TYPE_INTR, HID_EPOUT2_SIZE);
+  USBD_LL_OpenEP(pdev, HID_EPOUT2_ADDR, USBD_EP_TYPE_BULK, HID_EPOUT2_SIZE);
   pdev->ep_out[HID_EPOUT2_ADDR & 0xFU].is_used = 1U;
 
 
