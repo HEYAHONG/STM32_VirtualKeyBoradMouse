@@ -25,4 +25,12 @@ public:
 	afx_msg void OnClickedButton1();
 	
 	afx_msg void OnClickedButton2();
+	afx_msg void OnEnChangeEdit1();
+	CEdit edit_write;
+	CEdit edit_read;
+	CButton edit_read_hex;
+	CButton edit_write_hex;
+	afx_msg void OnBnClickedButton4();
+	afx_msg void OnBnClickedButton3();
+	virtual BOOL OnInitDialog();
 };
