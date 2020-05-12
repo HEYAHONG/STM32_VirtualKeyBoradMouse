@@ -197,10 +197,10 @@ static void mouse_key_scan()
 	}
 }
 
-
+extern bool config_mode;
 void keyscan()//扫描按键并且执行动作
 {
 
-	mouse_key_scan();//扫描鼠标按键
-	keyboard_key_scan();
+if(!config_mode)	mouse_key_scan();//扫描鼠标按键
+if(!config_mode)	keyboard_key_scan();
 }

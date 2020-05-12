@@ -7,12 +7,16 @@
 
 #include "VKBM_Config.h"
 #include "usbd_hid.h"
+
+bool config_mode=false;
 void VKBM_KeyBoard_Receive(uint8_t *buf,size_t size)//键盘数据接收
 {
 
 }
 void VKBM_Config_Receive(uint8_t *buf,size_t size)//配置数据接收
 {
+	//进入配置模式,停用按键扫描
+	config_mode=true;
 
 	//测试配置通道
 	VKBM_Config_Send(buf,size);
