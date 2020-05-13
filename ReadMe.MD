@@ -10,7 +10,7 @@
 
 * 配置接口（自定义USB接口）
 
-其中，USB HID 鼠标和USB HID键盘是免驱的，无需安装任何第三方驱动。配置接口需要安装libusbK驱动。
+其中，USB HID 鼠标和USB HID键盘是免驱的，无需安装任何第三方驱动。配置接口在windows下需要安装libusbK驱动。
 
 # 开发工具
 
