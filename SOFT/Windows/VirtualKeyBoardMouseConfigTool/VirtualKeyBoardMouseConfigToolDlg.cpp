@@ -307,7 +307,7 @@ void CVirtualKeyBoardMouseConfigToolDlg::OnBnClickedButton1()
 #define USB_IN_EndPoint 0x85
 #define USB_IN_EndPoint_Length 32 
 
-int CVirtualKeyBoardMouseConfigToolDlg::LibusbK_read(unsigned char* data)//data的长度必须为64字节
+int CVirtualKeyBoardMouseConfigToolDlg::LibusbK_read(unsigned char* data)//data的长度必须为32字节
 {
 	// TODO: 在此处添加实现代码.
 	if (handle == NULL)
@@ -325,7 +325,7 @@ int CVirtualKeyBoardMouseConfigToolDlg::LibusbK_read(unsigned char* data)//data�
 
 
 
-int CVirtualKeyBoardMouseConfigToolDlg::LibusbK_write(unsigned char* data)
+int CVirtualKeyBoardMouseConfigToolDlg::LibusbK_write(unsigned char* data)//data的长度必须为32字节
 {
 	// TODO: 在此处添加实现代码.
 	if (handle == NULL)
