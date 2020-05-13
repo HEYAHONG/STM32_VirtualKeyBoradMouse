@@ -997,13 +997,13 @@ uint8_t USBD_HID2_SendReport(USBD_HandleTypeDef  *pdev,
                             uint8_t *report,
                             uint16_t len)
 {
- // USBD_HID_HandleTypeDef     *hhid = (USBD_HID_HandleTypeDef *)pdev->pClassData;
+  //USBD_HID_HandleTypeDef     *hhid = (USBD_HID_HandleTypeDef *)pdev->pClassData;
 
   if (pdev->dev_state == USBD_STATE_CONFIGURED)
   {
     //if (hhid->state == HID_IDLE)
-    //{
-    //  hhid->state = HID_BUSY;
+   // {
+      //hhid->state = HID_BUSY;
       USBD_LL_Transmit(pdev,
                        HID_EPIN2_ADDR,
                        report,
@@ -1096,6 +1096,10 @@ static uint8_t  USBD_HID_DataIn(USBD_HandleTypeDef *pdev,
   /* Ensure that the FIFO is empty before a new transfer, this condition could
   be caused by  a new transfer before the end of the previous transfer */
 ((USBD_HID_HandleTypeDef *)pdev->pClassData)->state = HID_IDLE;
+
+if((epnum&0x0F)==(HID_EPIN2_ADDR & 0x0F))
+	VKBM_Config_Send_Finished();
+
   return USBD_OK;
 }
 

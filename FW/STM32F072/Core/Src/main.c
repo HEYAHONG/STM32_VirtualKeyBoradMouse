@@ -67,7 +67,7 @@ extern USBD_HandleTypeDef hUsbDeviceFS;
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	{//复位时断�?USB连接,再重新连接USB
+	{//复位时断�??USB连接,再重新连接USB
 			{
 			  GPIO_InitTypeDef GPIO_InitStruct = {0};
 
@@ -88,7 +88,7 @@ int main(void)
 			  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11|GPIO_PIN_12, GPIO_PIN_RESET);
 
 			}
-			{//延时�?
+			{//延时�??
 				uint32_t count=48000000ul/100;
 				while(count--);
 			}
@@ -124,10 +124,9 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	HAL_Delay(20);
-	keyscan();
 
     /* USER CODE BEGIN 3 */
+	 // keyscan();
   }
   /* USER CODE END 3 */
 }

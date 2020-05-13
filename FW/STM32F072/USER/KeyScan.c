@@ -35,16 +35,16 @@ static uint16_t KB_IN_Input()//返回的数据每位表示一位按键被按下(
 	return ret;
 }
 
-static  KeyBoard_Data kb_data;
+static  KeyBoard_Data  kb_data;
 
 static void KB_Key_Code_Process(uint8_t key)
 {//按键编码处理,此处仅用于测试
-
+/*
 	if(key <= 0x65)
 	{
-		KeyBoard_Set_key(&kb_data,key);
+		//KeyBoard_Set_key(&kb_data,key);
 	}
-
+*/
 }
 
 static void keyboard_key_scan()
@@ -73,7 +73,7 @@ static void keyboard_key_scan()
 static void mouse_key_scan()
 {
 	{//扫描鼠标按键
-		Mouse_Data data;
+		static Mouse_Data data;
 		Mouse_Set_Default(&data);
 		bool R_click,M_click,L_cilck,R,L,U,D;//按键是否按下的标志
 		static uint32_t R_Step=1,L_Step=1,U_Step=1,D_Step=1;//每次按键前进的步长

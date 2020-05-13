@@ -91,7 +91,7 @@ void Dialog_Debug::OnBnClickedButton4()
 {
 	// TODO: 在此添加控件通知处理程序代码
 
-	unsigned char buff[64] = {};
+	unsigned char buff[32] = {};
 
 	if (edit_write_hex.GetCheck() == BST_CHECKED)
 	{
@@ -99,7 +99,7 @@ void Dialog_Debug::OnBnClickedButton4()
 	}
 	else
 	{
-		wchar_t w_buff[64] = {};
+		wchar_t w_buff[32] = {};
 		edit_write.GetLine(0, (LPTSTR)w_buff,sizeof(w_buff)/sizeof(wchar_t));
 		wcstombs((char *)buff, w_buff, sizeof(buff));
 		parent->LibusbK_write(buff);
@@ -111,7 +111,7 @@ void Dialog_Debug::OnBnClickedButton4()
 void Dialog_Debug::OnBnClickedButton3()
 {
 	// TODO: 在此添加控件通知处理程序代码
-	unsigned char buff[64] = {};
+	unsigned char buff[32] = {};
 
 	if (edit_read_hex.GetCheck() == BST_CHECKED)
 	{
@@ -119,7 +119,7 @@ void Dialog_Debug::OnBnClickedButton3()
 	}
 	else
 	{
-		wchar_t w_buff[64] = {};
+		wchar_t w_buff[32] = {};
 		if (parent->LibusbK_read(buff) > 0)
 		{
 

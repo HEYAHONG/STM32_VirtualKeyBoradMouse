@@ -37,7 +37,7 @@ int main()
     libusb_claim_interface(hdev,Config_Interface);
 
     {//测设读写
-        unsigned char out[64]="012345678901234567890123456789012",in[64]="";
+        unsigned char out[32]="0123456789012345678",in[32]="";
         int count=0;
         if(libusb_bulk_transfer(hdev,OUT_EndPoint,out,sizeof(out),&count,1000)==0)
             printf("\n\r发送数据成功 - %d 字节\n\r",count);

@@ -305,7 +305,7 @@ void CVirtualKeyBoardMouseConfigToolDlg::OnBnClickedButton1()
 
 
 #define USB_IN_EndPoint 0x85
-#define USB_IN_EndPoint_Length 64 
+#define USB_IN_EndPoint_Length 32 
 
 int CVirtualKeyBoardMouseConfigToolDlg::LibusbK_read(unsigned char* data)//data的长度必须为64字节
 {
@@ -321,7 +321,7 @@ int CVirtualKeyBoardMouseConfigToolDlg::LibusbK_read(unsigned char* data)//data�
 }
 
 #define USB_OUT_EndPoint 0x04
-#define USB_OUT_EndPoint_Length 64
+#define USB_OUT_EndPoint_Length 32
 
 
 

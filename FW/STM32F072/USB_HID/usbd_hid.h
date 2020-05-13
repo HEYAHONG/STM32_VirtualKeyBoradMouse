@@ -53,10 +53,10 @@ extern "C" {
 
 //添加配置接口相关定义
 #define HID_EPIN2_ADDR				  0x85U
-#define HID_EPIN2_SIZE				  64U
+#define HID_EPIN2_SIZE				  32U
 
 #define HID_EPOUT2_ADDR				  0x04U
-#define HID_EPOUT2_SIZE				  64U
+#define HID_EPOUT2_SIZE				  32U
 
 #define USB_HID_CONFIG_DESC_SIZ       89U
 #define USB_HID_DESC_SIZ              9U

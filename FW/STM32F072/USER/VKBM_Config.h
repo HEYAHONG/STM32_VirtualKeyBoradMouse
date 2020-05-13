@@ -12,6 +12,6 @@
 void VKBM_KeyBoard_Receive(uint8_t *buf,size_t size);//键盘数据接收
 void VKBM_Config_Receive(uint8_t *buf,size_t size);//配置数据接收
 void VKBM_Config_Send(uint8_t *buf,size_t size);//配置数据发送
-
+void VKBM_Config_Send_Finished();//发送完成
 
 #endif /* VKB_CONFIG_H_ */

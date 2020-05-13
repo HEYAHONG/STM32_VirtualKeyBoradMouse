@@ -28,3 +28,8 @@ void VKBM_Config_Send(uint8_t *buf,size_t size)//配置数据发送
 {
 	USBD_HID2_SendReport(&hUsbDeviceFS,buf,size>64?64:size);
 }
+
+void VKBM_Config_Send_Finished()//发送完成
+{
+	//config_mode=false;
+}
