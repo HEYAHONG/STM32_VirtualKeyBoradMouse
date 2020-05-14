@@ -96,12 +96,35 @@ void Dialog_Debug::OnBnClickedButton4()
 	if (edit_write_hex.GetCheck() == BST_CHECKED)
 	{
 		//MessageBox(_T("hex模式"));
+		wchar_t w_buff[128] = {};
+		char c_buff[128] = {};
+		edit_write.GetLine(0, (LPTSTR)w_buff, sizeof(w_buff) / sizeof(wchar_t));
+		//wcstombs((char*)c_buff, w_buff, sizeof(buff));
+		WideCharToMultiByte(CP_ACP, 0, w_buff, sizeof(w_buff) / sizeof(wchar_t), c_buff, sizeof(c_buff), NULL, NULL);
+		if (CheckHexInPut(c_buff, sizeof(c_buff)))
+		{
+			if (strlen(c_buff) > 64 || strlen(c_buff) % 2 == 1)
+			{
+				MessageBox(_T("输入过长或者输入的长度是奇数"), _T("警告"));
+				
+			}
+			else
+			{
+				HexToChar((char*)buff, sizeof(buff), c_buff, sizeof(c_buff));
+				parent->LibusbK_write(buff);
+			}
+		}
+		else
+		{
+			MessageBox(_T("输入非法，只允许连续输入以下字符:0-9,a-f,A-F"),_T("警告"));
+		}
 	}
 	else
 	{
 		wchar_t w_buff[32] = {};
 		edit_write.GetLine(0, (LPTSTR)w_buff,sizeof(w_buff)/sizeof(wchar_t));
-		wcstombs((char *)buff, w_buff, sizeof(buff));
+		//wcstombs((char *)buff, w_buff, sizeof(buff));
+		WideCharToMultiByte(CP_ACP, 0, w_buff, sizeof(w_buff) / sizeof(wchar_t),(char *) buff, sizeof(buff), NULL, NULL);
 		parent->LibusbK_write(buff);
 		//MessageBox(_T("非hex模式"));
 	}
@@ -115,7 +138,16 @@ void Dialog_Debug::OnBnClickedButton3()
 
 	if (edit_read_hex.GetCheck() == BST_CHECKED)
 	{
-		MessageBox(_T("hex模式"));
+		//MessageBox(_T("hex模式"));
+		wchar_t w_buff[128] = {};
+		char c_buff[128] = {};
+		if (parent->LibusbK_read(buff) > 0)
+		{
+			CharToHex(c_buff, sizeof(c_buff), (char*)buff, sizeof(buff));
+			MultiByteToWideChar(CP_ACP, 0, (char*)c_buff, sizeof(c_buff), w_buff, sizeof(w_buff) / sizeof(wchar_t));
+			edit_read.SetWindowTextW(w_buff);
+		}
+		
 	}
 	else
 	{
@@ -123,7 +155,8 @@ void Dialog_Debug::OnBnClickedButton3()
 		if (parent->LibusbK_read(buff) > 0)
 		{
 
-			mbstowcs(w_buff, (char *)buff, sizeof(w_buff) / sizeof(wchar_t));
+			//mbstowcs(w_buff, (char *)buff, sizeof(w_buff) / sizeof(wchar_t));
+			MultiByteToWideChar(CP_ACP, 0, (char*)buff, sizeof(buff), w_buff, sizeof(w_buff) / sizeof(wchar_t));
 			edit_read.SetWindowTextW(w_buff);
 			//MessageBoxA(NULL,(char *) buff,"读取内容",MB_OK);
 		}
@@ -145,4 +178,58 @@ BOOL Dialog_Debug::OnInitDialog()
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // 异常: OCX 属性页应返回 FALSE
+}
+
+
+bool Dialog_Debug::CheckHexInPut(char* buf, size_t length)
+{
+	// TODO: 在此处添加实现代码.
+	size_t _length = strlen(buf);
+	if (_length > length)
+			_length = length;
+	for (size_t i = 0;i < _length;i++)
+	{
+		if (!((buf[i] >= '0' && buf[i] <= '9') || (buf[i] >= 'a' && buf[i] <= 'f') || (buf[i] >= 'A' && buf[i] <= 'F')))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+void Dialog_Debug::HexToChar(char* dst, size_t _dst_length, char* src, size_t _src_length)//_src_length必须是偶数，且输入必须合法
+{
+	// TODO: 在此处添加实现代码.
+	size_t src_length = strlen(src);
+	if (src_length > _src_length)
+		src_length = _src_length;
+	char buff[3] = {};
+	for (size_t i = 0;i < src_length/2;i++)
+	{
+		memset(buff, 0, sizeof(buff));
+		memcpy(buff, &src[i * 2], 2);
+		if(i<_dst_length)
+			sscanf(buff, "%x", &dst[i]);
+	}
+}
+
+
+void Dialog_Debug::CharToHex(char* dst, size_t _dst_length, char* src, size_t _src_length)
+{
+	// TODO: 在此处添加实现代码.
+	size_t dst_length = _dst_length;
+
+	if (dst_length % 2 == 1)
+			dst_length--;
+
+	char buff[4] = {};
+	for(size_t i=0;i<_src_length; i++)
+	{
+		memset(buff, 0, sizeof(buff));
+		sprintf(buff, "%02X", (uint8_t)src[i]);
+		if (i * 2 < dst_length)
+			memcpy(&dst[i * 2], buff, 2);
+	}
 }

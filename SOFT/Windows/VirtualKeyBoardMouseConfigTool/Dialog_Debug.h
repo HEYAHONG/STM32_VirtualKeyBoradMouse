@@ -33,4 +33,7 @@ public:
 	afx_msg void OnBnClickedButton4();
 	afx_msg void OnBnClickedButton3();
 	virtual BOOL OnInitDialog();
+	bool CheckHexInPut(char* buf, size_t length);
+	void HexToChar(char* dst, size_t _dst_length, char* src, size_t _src_length);
+	void CharToHex(char* dst, size_t _dst_length, char* src, size_t _src_length);
 };
