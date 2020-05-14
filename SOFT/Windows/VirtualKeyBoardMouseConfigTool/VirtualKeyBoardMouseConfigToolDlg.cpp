@@ -113,8 +113,8 @@ BOOL CVirtualKeyBoardMouseConfigToolDlg::OnInitDialog()
 	CRect tabRect;   // 标签控件客户区的位置和大小 
 	tab.GetClientRect(&tabRect);
 	// 调整tabRect，使其覆盖范围适合放置标签页   
-	tabRect.left += 1;
-	tabRect.right -= 1;
+	tabRect.left += 5;
+	tabRect.right -= 5;
 	tabRect.top += 25;
 	tabRect.bottom -= 1;
 	
@@ -137,8 +137,20 @@ BOOL CVirtualKeyBoardMouseConfigToolDlg::OnInitDialog()
 
 	//tab_debug.ShowWindow(SW_SHOW);
 
+	//帮助页
+	tab.InsertItem(1,_T("帮助"));
+
+	tab_help.Create(IDD_DIALOG_Help, &tab);
+
+	tab_help.SetWindowPos(NULL, tabRect.left, tabRect.top, tabRect.Width(), tabRect.Height(), SWP_SHOWWINDOW);
+
+	tab_help.RefreshWindowSize();
+
+	tab_help.ShowWindow(SW_HIDE);
+
 	//初始化libusb
 	LibusbK_init();
+
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
@@ -197,6 +209,20 @@ HCURSOR CVirtualKeyBoardMouseConfigToolDlg::OnQueryDragIcon()
 void CVirtualKeyBoardMouseConfigToolDlg::OnTcnSelchangeTab1(NMHDR* pNMHDR, LRESULT* pResult)
 {
 	// TODO: 在此添加控件通知处理程序代码
+	switch (tab.GetCurSel())
+	{
+	default:
+		MessageBox(_T("Tab内部错误!"));
+		break;
+	case 0:
+		tab_debug.ShowWindow(SW_SHOW);
+		tab_help.ShowWindow(SW_HIDE);
+		break;
+	case 1:
+		tab_debug.ShowWindow(SW_HIDE);
+		tab_help.ShowWindow(SW_SHOW);
+		break;
+	}
 	*pResult = 0;
 }
 
@@ -337,4 +363,13 @@ int CVirtualKeyBoardMouseConfigToolDlg::LibusbK_write(unsigned char* data)//data
 	Usb.WritePipe(handle, USB_OUT_EndPoint, data, USB_OUT_EndPoint_Length, &ret, NULL);
 	return ret;
 	return 0;
+}
+
+#include "Dialog_About.h"
+
+void CVirtualKeyBoardMouseConfigToolDlg::about_dialog()
+{
+	// TODO: 在此处添加实现代码.
+	static Dialog_About dlg(this);
+	dlg.DoModal();
 }

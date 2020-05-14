@@ -36,4 +36,5 @@ public:
 	bool CheckHexInPut(char* buf, size_t length);
 	void HexToChar(char* dst, size_t _dst_length, char* src, size_t _src_length);
 	void CharToHex(char* dst, size_t _dst_length, char* src, size_t _src_length);
+	afx_msg void OnBnClickedButton5();
 };

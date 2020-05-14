@@ -43,6 +43,7 @@ BEGIN_MESSAGE_MAP(Dialog_Debug, CDialog)
 	ON_EN_CHANGE(IDC_EDIT1, &Dialog_Debug::OnEnChangeEdit1)
 	ON_BN_CLICKED(IDC_BUTTON4, &Dialog_Debug::OnBnClickedButton4)
 	ON_BN_CLICKED(IDC_BUTTON3, &Dialog_Debug::OnBnClickedButton3)
+	ON_BN_CLICKED(IDC_BUTTON5, &Dialog_Debug::OnBnClickedButton5)
 END_MESSAGE_MAP()
 
 
@@ -232,4 +233,11 @@ void Dialog_Debug::CharToHex(char* dst, size_t _dst_length, char* src, size_t _s
 		if (i * 2 < dst_length)
 			memcpy(&dst[i * 2], buff, 2);
 	}
+}
+
+
+void Dialog_Debug::OnBnClickedButton5()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	parent->about_dialog();
 }

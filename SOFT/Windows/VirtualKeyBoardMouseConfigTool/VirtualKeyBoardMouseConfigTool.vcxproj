@@ -188,7 +188,9 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Dialog_About.h" />
     <ClInclude Include="Dialog_Debug.h" />
+    <ClInclude Include="Dialog_Help.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
@@ -197,7 +199,9 @@
     <ClInclude Include="VirtualKeyBoardMouseConfigToolDlg.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Dialog_About.cpp" />
     <ClCompile Include="Dialog_Debug.cpp" />
+    <ClCompile Include="Dialog_Help.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -215,6 +219,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\VirtualKeyBoardMouseConfigTool.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="help.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

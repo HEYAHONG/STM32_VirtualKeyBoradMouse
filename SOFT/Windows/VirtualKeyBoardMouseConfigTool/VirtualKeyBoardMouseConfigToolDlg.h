@@ -3,6 +3,7 @@
 //
 
 #include "Dialog_Debug.h"
+#include "Dialog_Help.h"
 
 //导入libusb库
 
@@ -55,6 +56,7 @@ public:
 	CTabCtrl tab;
 	afx_msg void OnTcnSelchangeTab1(NMHDR* pNMHDR, LRESULT* pResult);
 	Dialog_Debug tab_debug;
+	Dialog_Help  tab_help;
 
 	//LibUSBK相关变量
 	KUSB_DRIVER_API Usb;
@@ -66,4 +68,5 @@ public:
 	afx_msg void OnBnClickedButton1();
 	int LibusbK_read(unsigned char* data);
 	int LibusbK_write(unsigned char* data);
+	void about_dialog();
 };

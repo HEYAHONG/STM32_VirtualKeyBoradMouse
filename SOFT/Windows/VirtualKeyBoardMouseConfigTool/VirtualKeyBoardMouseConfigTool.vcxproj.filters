@@ -36,6 +36,12 @@
     <ClInclude Include="Dialog_Debug.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Dialog_About.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialog_Help.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VirtualKeyBoardMouseConfigTool.cpp">
@@ -48,6 +54,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Dialog_Debug.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialog_About.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialog_Help.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -65,5 +77,8 @@
     <Image Include="res\VirtualKeyBoardMouseConfigTool.ico">
       <Filter>资源文件</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="help.txt" />
   </ItemGroup>
 </Project>
