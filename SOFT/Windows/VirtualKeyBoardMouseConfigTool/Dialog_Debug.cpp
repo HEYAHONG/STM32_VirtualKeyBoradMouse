@@ -95,7 +95,7 @@ void Dialog_Debug::OnBnClickedButton4()
 
 	if (edit_write_hex.GetCheck() == BST_CHECKED)
 	{
-		MessageBox(_T("hex模式"));
+		//MessageBox(_T("hex模式"));
 	}
 	else
 	{
