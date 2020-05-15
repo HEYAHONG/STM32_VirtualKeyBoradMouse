@@ -72,12 +72,14 @@ BOOL Dialog_Help::OnInitDialog()
 				memset(buff, 0, sizeof(wchar_t) * (resource_size + 1));
 				MultiByteToWideChar(CP_ACP, 0, (char*)p, resource_size, buff, resource_size);
 				help_edit.SetWindowTextW(buff);
-
+				delete[] buff;
 			}
 
 			//释放资源
 			FreeResource(handle);
+			CloseHandle(handle);
 		}
+		CloseHandle(hrSrc);
 	}
 
 	return TRUE;  // return TRUE unless you set the focus to a control
