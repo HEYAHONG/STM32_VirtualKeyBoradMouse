@@ -92,7 +92,7 @@ void Dialog_Debug::OnBnClickedButton4()
 {
 	// TODO: 在此添加控件通知处理程序代码
 
-	unsigned char buff[32] = {};
+	unsigned char buff[64] = {};
 
 	if (edit_write_hex.GetCheck() == BST_CHECKED)
 	{

@@ -77,9 +77,9 @@ BOOL Dialog_Help::OnInitDialog()
 
 			//释放资源
 			FreeResource(handle);
-			CloseHandle(handle);
+			//CloseHandle(handle);
 		}
-		CloseHandle(hrSrc);
+		//CloseHandle(hrSrc);
 	}
 
 	return TRUE;  // return TRUE unless you set the focus to a control
