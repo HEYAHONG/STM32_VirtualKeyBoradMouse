@@ -212,7 +212,7 @@ void Dialog_Debug::HexToChar(char* dst, size_t _dst_length, char* src, size_t _s
 		memset(buff, 0, sizeof(buff));
 		memcpy(buff, &src[i * 2], 2);
 		if(i<_dst_length)
-			sscanf(buff, "%x", &dst[i]);
+			sscanf(buff, "%hhx", &dst[i]);
 	}
 }
 
